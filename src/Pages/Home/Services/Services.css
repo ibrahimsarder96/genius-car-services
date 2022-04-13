@@ -1,0 +1,20 @@
+.services-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+/* make service responsive */
+
+
+@media only screen and (max-width: 577px){
+  .services-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width: 588px) and (max-width: 992px) {
+  .services-container{
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
