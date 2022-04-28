@@ -11,8 +11,8 @@ const Orders = () => {
   const navigate = useNavigate();
   useEffect( () =>{
     const getOrders = async() =>{
-      const email = user.email;
-      const url = `http://localhost:5000/order?email=${email}`;
+      const email = user?.email;
+      const url = `https://guarded-ravine-63543.herokuapp.com/order?email=${email}`;
       try{
         const {data} = await axiosPrivate.get(url);
         setOrders(data);
@@ -28,8 +28,13 @@ const Orders = () => {
     getOrders();
   },[user])
   return (
-    <div>
-      <h2>your orders: {orders.length}</h2>
+    <div className='w-50 mx-auto mt-3'>
+      <h2>Your orders: {orders.length}</h2>
+      {
+        orders.map(order => <div key={order.id}>
+          <p>{order.email} : {order.service}</p>
+          </div>)
+      }
     </div>
   );
 };

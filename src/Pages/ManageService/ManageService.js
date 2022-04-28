@@ -6,7 +6,7 @@ const ManageService = () => {
   const handleDelete = id =>{
     const proceed = window.confirm('are you sure');
     if(proceed){
-      const url = `http://localhost:5000/service/${id}`;
+      const url = `https://guarded-ravine-63543.herokuapp.com/service/${id}`;
       fetch(url, {
         method: 'DELETE'
       })

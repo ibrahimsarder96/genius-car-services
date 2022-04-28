@@ -5,7 +5,7 @@ const AddService = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     console.log(data);
-    const url = `http://localhost:5000/service`;
+    const url = `https://guarded-ravine-63543.herokuapp.com/service`;
     fetch(url, {
       method: 'POST',
       headers: {
